@@ -21,22 +21,23 @@ import java.io.File;
 import java.io.IOException;
 
 public class RecorderActivity extends AppCompatActivity
-implements SurfaceHolder.Callback{
+        implements SurfaceHolder.Callback {
 
     SurfaceView displayView;
     Gallery gallery;
     GalleryAdapter mAdapter;
     SurfaceHolder mDisplay;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recorder);
-        displayView = (SurfaceView)findViewById(R.id.surface_display);
-        gallery = (Gallery)findViewById(R.id.gallery);
+        displayView = (SurfaceView) findViewById(R.id.surface_display);
+        gallery = (Gallery) findViewById(R.id.gallery);
         mAdapter = new GalleryAdapter(this);
         gallery.setAdapter(mAdapter);
         displayView.getHolder().addCallback(this);
-        Button btn = (Button)findViewById(R.id.btn_start);
+        Button btn = (Button) findViewById(R.id.btn_start);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +45,7 @@ implements SurfaceHolder.Callback{
             }
         });
 
-        btn = (Button)findViewById(R.id.btn_stop);
+        btn = (Button) findViewById(R.id.btn_stop);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,6 +56,7 @@ implements SurfaceHolder.Callback{
 
     MediaRecorder mRecorder;
     boolean isUseProfile = false;
+
     private void startRecording() {
         if (mRecorder == null) {
             mRecorder = new MediaRecorder();
@@ -132,6 +134,7 @@ implements SurfaceHolder.Callback{
             sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri));
         }
     }
+
     @Override
     public void surfaceCreated(SurfaceHolder surfaceHolder) {
         mDisplay = surfaceHolder;

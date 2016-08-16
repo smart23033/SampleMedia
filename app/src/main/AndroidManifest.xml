@@ -7,6 +7,13 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -26,9 +33,12 @@
             android:exported="true"
             android:screenOrientation="landscape" />
         <activity android:name=".VideoListActivity" />
-        <activity android:name=".RecorderActivity"
-            android:screenOrientation="landscape"
-            android:exported="true"></activity>
+        <activity
+            android:name=".RecorderActivity"
+            android:exported="true"
+            android:screenOrientation="landscape" />
+        <activity android:name=".CameraActivity" android:exported="true" />
+        <activity android:name=".CaptureImageActivity" android:exported="true"></activity>
     </application>
 
 </manifest>
