@@ -3,6 +3,9 @@
     package="example.tacademy.com.samplemedia">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -17,12 +20,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MusicListActivity" />
         <activity
-            android:name=".MusicListActivity"
-             />
-        <activity android:name=".VideoActivity" android:exported="true"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".VideoListActivity" ></activity>
+            android:name=".VideoActivity"
+            android:exported="true"
+            android:screenOrientation="landscape" />
+        <activity android:name=".VideoListActivity" />
+        <activity android:name=".RecorderActivity"
+            android:screenOrientation="landscape"
+            android:exported="true"></activity>
     </application>
 
 </manifest>
