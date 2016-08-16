@@ -17,7 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MusicListActivity" android:exported="true"></activity>
+        <activity
+            android:name=".MusicListActivity"
+             />
+        <activity android:name=".VideoActivity" android:exported="true"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".VideoListActivity" ></activity>
     </application>
 
 </manifest>
